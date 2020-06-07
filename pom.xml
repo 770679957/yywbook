@@ -16,7 +16,8 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <docker.image.prefix>demo</docker.image.prefix> <!--镜像前缀，随便取-->
+        <docker.image.prefix>yywbookdemo</docker.image.prefix> <!--镜像前缀，随便取-->
+        <docker.registry>registry.cn-beijing.aliyuncs.com/yywdocker/yywbook</docker.registry>
     </properties>
 
     <dependencies>
@@ -68,9 +69,17 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.yyw.book.BookApplication</mainClass>
+                    <finalName>${project.build.finalName}</finalName>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.3.7</version>
+                <version>1.4.10</version>
                 <!--放开这块注释，则运行mvn deploy命令就会打包镜像-->
                 <executions>
                     <execution>
@@ -82,7 +91,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <repository>${docker.repostory}/${project.artifactId}</repository>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
