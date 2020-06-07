@@ -1,10 +1,9 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
+FROM java:8-jdk-alpine
 ARG JAR_FILE
-COPY ${JAR_FILE} /usr/app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/usr/app.jar"]
+ADD target/${JAR_FILE} app.jar
 EXPOSE 8080
-MAINTAINER yyw <yywbook.com>
+ENTRYPOINT ["/usr/bin/java", "-jar", "/app.jar"]
+
 
 # FROM openjdk:8u181-jdk-alpine ： 从docker仓库中获取基础镜像
 # ARG workdir=/app ： 添加变量，该变量只在当前的dockerfile中有效，如果换成ENV，则在容器中生效。这里需要注意的是，ARG和ENV对哪些指令是起效的，可以参考  docker - Dockerfile常用指令
