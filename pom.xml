@@ -94,7 +94,7 @@
                         <!--子用户名@企业别名 或 子用户名@主账号UID-->
                           <username>770679957@qq.com</username>
                           <!--在容器镜像服务控制台"设置Registry登陆密码"-->
-                          <password>Qq770679957</password>
+                          <password>docker770679957</password>
                           <!--registry.cn-hangzhou.aliyuncs.com/namespace/repositoryname-->
                           <repository>registry.cn-beijing.aliyuncs.com/yywdocker/yywbook</repository>
                           <tag>latest</tag>   
