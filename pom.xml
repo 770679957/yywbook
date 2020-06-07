@@ -98,7 +98,6 @@
                           <!--registry.cn-hangzhou.aliyuncs.com/namespace/repositoryname-->
                           <repository>registry.cn-beijing.aliyuncs.com/yywdocker/yywbook</repository>
                           <tag>latest</tag>   
-                    <repository>${docker.repostory}/${project.artifactId}</repository>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
