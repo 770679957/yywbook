@@ -16,8 +16,9 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <docker.image.prefix>yywbookdemo</docker.image.prefix> <!--镜像前缀，随便取-->
-        <docker.registry>registry.cn-beijing.aliyuncs.com/yywdocker/yywbook</docker.registry>
+        <docker.image.prefix>yywdocker</docker.image.prefix> <!--镜像前缀，随便取-->
+        <!--<docker.registry>registry.cn-beijing.aliyuncs.com/yywdocker/yywbook</docker.registry>-->
+        <docker.registry>registry.cn-beijing.aliyuncs.com</docker.registry>
         <docker.repostory>registry.cn-beijing.aliyuncs.com/yywdocker/yywbook</docker.repostory>
     </properties>
 
@@ -98,7 +99,7 @@
                           <!--在容器镜像服务控制台"设置Registry登陆密码"-->
                           <password>docker770679957</password>
                           <!--registry.cn-hangzhou.aliyuncs.com/namespace/repositoryname-->
-                          <repository>${docker.repostory}/${project.artifactId}</repository>
+                          <repository>${docker.registry}/${docker.image.prefix}/${project.artifactId}</repository>
                           <tag>latest</tag>   
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
