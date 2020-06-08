@@ -11,7 +11,7 @@
     <groupId>com.yyw</groupId>
     <artifactId>yywbook</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>book</name>
+    <name>yywbook</name>
     <description>yywbook 小说系统</description>
 
     <properties>
@@ -93,7 +93,6 @@
                     </execution>
                 </executions>
                 <configuration>
-                         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <!--子用户名@企业别名 或 子用户名@主账号UID-->
                           <username>770679957@qq.com</username>
                           <!--在容器镜像服务控制台"设置Registry登陆密码"-->
