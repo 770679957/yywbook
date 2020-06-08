@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yyw</groupId>
-    <artifactId>book</artifactId>
+    <artifactId>yywbook</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>book</name>
     <description>yywbook 小说系统</description>
