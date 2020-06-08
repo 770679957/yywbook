@@ -1,8 +1,12 @@
-FROM java:8-jdk-alpine
+FROM anapsix/alpine-java
+MAINTAINER ywytest
+VOLUME /tmp
 ARG JAR_FILE
-ADD target/${JAR_FILE} app.jar
+COPY ${JAR_FILE} /app/app.jar
+WORKDIR /app
+RUN bash -c 'touch /app.jar'
 EXPOSE 8080
-ENTRYPOINT ["/usr/bin/java", "-jar", "/app.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "./app.jar","--spring.profiles.active=pre"]
 
 
 # FROM openjdk:8u181-jdk-alpine ： 从docker仓库中获取基础镜像
