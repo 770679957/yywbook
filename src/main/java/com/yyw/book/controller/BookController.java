@@ -16,6 +16,7 @@ public class BookController {
     @Autowired
     public UserMapper userMapper;
 
+    //http://127.0.0.1:8080/book/getUserList
     @RequestMapping(value = "/getUserList",method = RequestMethod.GET)
     public List<User> getUserList(){
         List<User> userList = userMapper.selectList(null);
